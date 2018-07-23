@@ -21,10 +21,18 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.HomePage.as_view(), name='home'),
+
     path('accounts/',include('accounts.urls',namespace='accounts')),
+
     #this includes django authorization support
     path('accounts/',include('django.contrib.auth.urls')),
+
     #path(r'accounts/',include('django.urls'))
+    re_path(r"^posts/", include("posts.urls", namespace="posts")),
+
+    re_path(r"^groups/",include("groups.urls", namespace="groups")),
+
     path('test/',views.TestPage.as_view(),name='test'),
+
     path('thanks/',views.ThanksPage.as_view(),name='thanks'),
 ]

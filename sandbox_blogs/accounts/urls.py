@@ -12,5 +12,4 @@ urlpatterns = [
     # LogoutView has a default template, so we dont have to create one
     re_path(r'logout/$', auth_views.LogoutView.as_view(),name='logout'),
     re_path(r'signup/$', views.SignUp.as_view(),name='signup'),
-
 ]
