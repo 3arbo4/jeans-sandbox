@@ -7,7 +7,10 @@ from django.urls import reverse
 from django.db import IntegrityError
 
 from django.views import generic
-
+'''
+you can use context_object_name = 'reference_name_variable to be used in your template'
+when using generic ListView or DetailView
+'''
 from groups.models import Group,GroupMember
 from . import models
 class CreateGroup(LoginRequiredMixin,generic.CreateView):
